@@ -27,7 +27,7 @@ app.get('/api/products', (req, res) => {
 app.post('/api/products', (req, res) => {
 	let product = {};
 	product = req.body;
-	products.push(...product);
+	products.push({ ...product });
 	res.json(products);
 });
 
