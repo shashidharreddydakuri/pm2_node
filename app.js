@@ -45,7 +45,6 @@ app.delete('/api/products/:id', (req, res) => {
 	let ID = 0;
 
 	ID = req.params.id;
-
 	products = products.filter((prod) => prod.id.toString() !== ID.toString());
 	res.json(products);
 });
