@@ -31,14 +31,23 @@ app.post('/api/products', (req, res) => {
 	res.json(products);
 });
 
-app.put('/api/products/:id', (req, res)=> {
+app.put('/api/products/:id', (req, res) => {
 	let product = {};
 	product = req.body;
 	products.map((prod, index) => {
-		if(prod.id == product.id) {
-			products[index] = { ...product }
+		if (prod.id == product.id) {
+			products[index] = { ...product };
 		}
-	})
-})
+	});
+});
+
+app.delete('/api/products/:id', (req, res) => {
+	let ID = 0;
+
+	ID = req.params.id;
+
+	products = products.filter((prod) => prod.id.toString() !== ID.toString());
+	res.json(products);
+});
 
 app.listen(process.env.port || 8000, console.log('listening on port 8000'));
