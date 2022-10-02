@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const fs = require('fs');
 const app = express();
 
 app.use(cors());
@@ -47,6 +48,18 @@ app.delete('/api/products/:id', (req, res) => {
 	ID = req.params.id;
 	products = products.filter((prod) => prod.id.toString() !== ID.toString());
 	res.json(products);
+});
+
+app.get('/api/file/write', (req, res) => {
+	let content = 'test file content';
+	fs.writeFile('./test.txt', content, (err) => {
+		if (err) {
+			console.error(err);
+			return;
+		} else {
+			res.json('File written successfully');
+		}
+	});
 });
 
 app.listen(process.env.port || 8000, console.log('listening on port 8000'));
