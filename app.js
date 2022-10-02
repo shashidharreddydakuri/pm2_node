@@ -62,4 +62,15 @@ app.get('/api/file/write', (req, res) => {
 	});
 });
 
+app.get('/api/file/read', (req, res) => {
+	fs.readFile("./test.txt", "utf8", (err, data) => {
+		if(err) {
+			console.error(err);
+			return;
+		} else {
+			res.json(data)
+		}
+	})
+})
+
 app.listen(process.env.port || 8000, console.log('listening on port 8000'));
