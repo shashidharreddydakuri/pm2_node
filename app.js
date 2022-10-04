@@ -19,6 +19,8 @@ app.get('/', (req, res) => {
 	res.json('Welcome to express home page');
 });
 
+const productsRouter = require('./routes/products');
 
+app.use('/api/products', productsRouter);
 
 app.listen(process.env.port || 8000, console.log('listening on port 8000'));
