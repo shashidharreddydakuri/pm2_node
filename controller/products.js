@@ -13,6 +13,12 @@ const createProducts = async (req, res) => {
 const updateProducts = async (req, res) => {
 	let product = {};
 	product = req.body;
+	products.map((prod, index) => {
+		if (prod.id == product.id) {
+			products[index] = { ...product };
+		}
+	});
+	res.json(products);
 };
 
 const deleteProducts = async (req, res) => {};
