@@ -21,4 +21,17 @@ const updateProducts = async (req, res) => {
 	res.json(products);
 };
 
-const deleteProducts = async (req, res) => {};
+const deleteProducts = async (req, res) => {
+	let ID = 0;
+	ID = req.params.id;
+	products = products.filter((prod) => prod.id.toString() !== ID.toString());
+
+	res.json(products);
+};
+
+module.exports = {
+	getProducts,
+	createProducts,
+	updateProducts,
+	deleteProducts
+}
