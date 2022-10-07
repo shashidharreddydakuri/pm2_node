@@ -1,4 +1,10 @@
-let products = [];
+const {
+	getProductsMongoose,
+	createProductsMongoose,
+	updateProductsMongoose,
+	deleteProductsMongoose,
+} = require('../models/products');
+
 const getProducts = async (req, res) => {
 	res.json(products);
 };
