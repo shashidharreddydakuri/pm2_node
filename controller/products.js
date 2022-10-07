@@ -4,7 +4,7 @@ const getProducts = async (req, res) => {
 };
 
 const createProducts = async (req, res) => {
-	let products = {};
+	let product = {};
 	product = req.body;
 	products.push({ ...product });
 	res.json(products);
@@ -33,5 +33,5 @@ module.exports = {
 	getProducts,
 	createProducts,
 	updateProducts,
-	deleteProducts
-}
+	deleteProducts,
+};
