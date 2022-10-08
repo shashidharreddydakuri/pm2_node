@@ -8,3 +8,5 @@ const connectMongoose = () => {
 		.then(() => console.log('connected to mongodb'))
 		.catch(() => console.error('connection to mongodb failed'));
 };
+
+module.exports = { connectMongoose };
