@@ -1,7 +1,7 @@
 const { query, response } = require('express');
 const mongoose = require('mongoose');
 
-const { connectMongoose } = require('./db-connect');
+const { connectMongoose } = require('../db-connect');
 
 let schema = mongoose.Schema;
 
