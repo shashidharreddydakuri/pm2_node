@@ -8,7 +8,7 @@ let schema = mongoose.Schema;
 let productSchema = new mongoose.Schema({
 	id: Number,
 	name: String,
-	Price: Number,
+	price: Number,
 });
 
 let ProductModel = mongoose.model('products', productSchema);
@@ -17,7 +17,7 @@ const getProductsMongoose = async () => {
 	connectMongoose();
 
 	let products = [];
-	query = {};
+	let query = {};
 
 	try {
 		products = await ProductModel.find(query, { _id: 0, _v: 0 });
