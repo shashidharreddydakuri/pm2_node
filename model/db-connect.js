@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectMongoose = () => {
 	mongoose
-		.connect('mongodb://localhost:2717/expresstutorial', {
+		.connect('mongodb://localhost:27017/expresstutorial', {
 			useNewUrlParser: true,
 		})
 		.then(() => console.log('connected to mongodb'))

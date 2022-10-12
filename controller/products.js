@@ -3,7 +3,7 @@ const {
 	createProductsMongoose,
 	updateProductsMongoose,
 	deleteProductsMongoose,
-} = require('../models/products');
+} = require('../model/products');
 
 const getProducts = async (req, res) => {
 	let products = await getProductsMongoose();
@@ -20,15 +20,15 @@ const createProducts = async (req, res) => {
 const updateProducts = async (req, res) => {
 	let product = {};
 	product = req.body;
-	
-	let response = await updateProductsMongoose(product)
+
+	let response = await updateProductsMongoose(product);
 	res.json(response);
 };
 
 const deleteProducts = async (req, res) => {
 	let ID = 0;
 	ID = req.params.id;
-	let response = await deleteProductsMongoose(ID)
+	let response = await deleteProductsMongoose(ID);
 
 	res.json(response);
 };
